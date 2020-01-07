@@ -179,6 +179,11 @@ class URLInput extends Component {
 					}
 					break;
 				}
+				case ENTER: {
+					// If pressing enter before suggestions are loaded use the current input as the link.
+					const { value } = this.props;
+					this.selectLink( { url: value, title: value } );
+				}
 			}
 
 			return;
